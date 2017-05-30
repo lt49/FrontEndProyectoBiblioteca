@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Biblioteca | Reg. préstamo</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="css/skin-blue.min.css">
+    <link rel="stylesheet" href="DataTables/media/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.js"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.dataTables.js"></script>
+    <script>
+        $(function() {
+            $("#tablaPrestamo").DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+        });
+
+    </script>
+    <Script Language="JavaScript">
+        function DameLaFechaHora() {
+            var hora = new Date()
+            var hrs = hora.getHours();
+            var min = hora.getMinutes();
+            var hoy = new Date();
+            var m = new Array();
+            var d = new Array()
+            var an = hoy.getYear();
+            m[0] = "Enero";
+            m[1] = "Febrero";
+            m[2] = "Marzo";
+            m[3] = "Abril";
+            m[4] = "Mayo";
+            m[5] = "Junio";
+            m[6] = "Julio";
+            m[7] = "Agosto";
+            m[8] = "Septiembre";
+            m[9] = "Octubre";
+            m[10] = "Noviembre";
+            m[11] = "Diciembre";
+            document.write(hrs + ":" + min + " (");
+            document.write(hoy.getDate());
+            document.write(" de ");
+            document.write(m[hoy.getMonth()]);
+            document.write(")");
+        }
+
+    </Script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+
+            <a href="inicio.html" class="logo">
+                <span class="logo-mini"><b>BI</b>BL</span>
+                <span class="logo-lg"><b>BIBLIOTECA </b> OFELIA</span>
+            </a>
+
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">USUARIO</span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        USUARIO - ADMIN
+                                        <small>OFELIA VELASQUEZ</small>
+                                    </p>
+                                </li>
+
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    </div>
+
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+
+                    <div class="pull-left info">
+                        <p>Usuario - Admin</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+                    </div>
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li class="header">MENÚ - PRINCIPAL</li>
+                    <li>
+                        <a href="inicio.html">
+                            <i class="glyphicon glyphicon-home"></i> <span>Página Principal</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>Registro</span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Libro.html"><i class="fa fa-book"></i>Libro</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Docente.html"><i class="fa fa-suitcase"></i>Docente</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Alumno.html"><i class="fa fa-mortar-board"></i>Alumno</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="Prestamo.html">
+                            <i class="glyphicon glyphicon-book"></i>
+                            <span> Préstamo</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>Reporte</span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li><a href="leen_mas.html"><i class="fa fa-circle-o"></i>Leen más</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="alertaPrestamo.html"><i class="fa fa-circle-o"></i>Alerta de préstamo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    MÓDULO PRÉSTAMO
+                    <small>Registrar préstamos de libros</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="inicio.html"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
+                    <li class="active">Préstamo</li>
+                </ol>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addRegistrarPrestamo"><i class="ion-person-add"></i> Registrar préstamo</button>
+                        <br><br>
+                    </div>
+                </div>
+
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Registro de préstamos</h3>
+                                </div>
+
+                                <div class="box-body">
+                                    <table id="tablaPrestamo" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <center>#</center>
+                                                </th>
+                                                <th>
+                                                    <center>Persona</center>
+                                                </th>
+                                                <th>
+                                                    <center>Tipo persona</center>
+                                                </th>
+                                                <th>s
+                                                    <center>Libro</center>
+                                                </th>
+                                                <th>
+                                                    <center>Forma de préstamo</center>
+                                                </th>
+
+                                                <th>
+                                                    <center>Fecha de préstamo</center>
+                                                </th>
+                                                <th>
+                                                    <center>Fecha devolución</center>
+                                                </th>
+                                                <th>
+                                                    <center>Tiempo de préstamo</center>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Junior Gadea</td>
+                                                <td>Alumno</td>
+                                                <td>Los perros hambrientos</td>
+                                                <td>Interno</td>
+                                                <td>21/03/2017</td>
+                                                <td>24/03/2017</td>
+                                                <td>3 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Jorge Gonzales</td>
+                                                <td>Docente</td>
+                                                <td>Romeo y Julieta</td>
+                                                <td>Externo</td>
+                                                <td>15/05/2017</td>
+                                                <td>17/05/2017</td>
+                                                <td>2 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Junior Gadea</td>
+                                                <td>Alumno</td>
+                                                <td>Los perros hambrientos</td>
+                                                <td>Interno</td>
+                                                <td>21/03/2017</td>
+                                                <td>24/03/2017</td>
+                                                <td>3 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Jorge Gonzales</td>
+                                                <td>Docente</td>
+                                                <td>Romeo y Julieta</td>
+                                                <td>Externo</td>
+                                                <td>15/05/2017</td>
+                                                <td>17/05/2017</td>
+                                                <td>2 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Junior Gadea</td>
+                                                <td>Alumno</td>
+                                                <td>Los perros hambrientos</td>
+                                                <td>Interno</td>
+                                                <td>21/03/2017</td>
+                                                <td>24/03/2017</td>
+                                                <td>3 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Jorge Gonzales</td>
+                                                <td>Docente</td>
+                                                <td>Romeo y Julieta</td>
+                                                <td>Externo</td>
+                                                <td>15/05/2017</td>
+                                                <td>17/05/2017</td>
+                                                <td>2 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Junior Gadea</td>
+                                                <td>Alumno</td>
+                                                <td>Los perros hambrientos</td>
+                                                <td>Interno</td>
+                                                <td>21/03/2017</td>
+                                                <td>24/03/2017</td>
+                                                <td>3 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Jorge Gonzales</td>
+                                                <td>Docente</td>
+                                                <td>Romeo y Julieta</td>
+                                                <td>Externo</td>
+                                                <td>15/05/2017</td>
+                                                <td>17/05/2017</td>
+                                                <td>2 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Junior Gadea</td>
+                                                <td>Alumno</td>
+                                                <td>Los perros hambrientos</td>
+                                                <td>Interno</td>
+                                                <td>21/03/2017</td>
+                                                <td>24/03/2017</td>
+                                                <td>3 dias</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Jorge Gonzales</td>
+                                                <td>Docente</td>
+                                                <td>Romeo y Julieta</td>
+                                                <td>Externo</td>
+                                                <td>15/05/2017</td>
+                                                <td>17/05/2017</td>
+                                                <td>2 dias</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th rowspan="1" colspan="1">#</th>
+                                                <th rowspan="1" colspan="1">Persona</th>
+                                                <th rowspan="1" colspan="1">Tipo persona</th>
+                                                <th rowspan="1" colspan="1">Libro</th>
+                                                <th rowspan="1" colspan="1">Forma de préstamo</th>
+                                                <th rowspan="1" colspan="1">Fecha de préstamo</th>
+                                                <th rowspan="1" colspan="1">Fecha devolución</th>
+                                                <th rowspan="1" colspan="1">Tiempo de préstamo</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>
+
+            <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        </footer>
+
+        <div class="modal fade" id="addRegistrarPrestamo" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Agregar préstamo</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="alert alert-warning" role="alert" style="opacity: 1.5">
+                            <strong style="color: #ffffff;"><i class="icon fa fa-warning"></i>Advertencia: </strong>Asegúrate de llenar todos los campos *
+                        </div>
+
+                        <form action="redirectcategoria" method="post" class="form-horizontal">
+                            <input type="hidden" name="op" value="add">
+                            <div class="row">
+
+                                <div class="col-lg-12">
+
+                                    <div class="form-group col-md-12">
+                                        <div class="form-group">
+                                            <label for="buscarPersona" class="col-md-2 control-label">* Persona:</label>
+                                            <div class="col-md-5">
+                                                <input name="nombreAlumno" type="text" autocomplete="off" class="form-control" placeholder="Buscar persona..." autofocus="autofocus">
+                                            </div>
+
+                                            <label for="tipoPersona" class="col-sm-3 control-label">* Tipo persona: </label>
+                                            <div class="col-sm-2">
+                                                <select name="categoria" class="form-control">
+                                                   <option value="1">Docente</option>
+                                                   <option value="2">Alumno</option>
+                                                   <option value="3">Externo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="nombreLibro" class="col-md-2 control-label">* Libro:</label>
+                                            <div class="col-md-5">
+                                                <input name="nombreLibro" type="search" autocomplete="off" class="form-control" placeholder="Buscar libro...">
+                                            </div>
+
+                                            <label for="formaPrestamo" class="col-sm-3 control-label">* Forma préstamo: </label>
+                                            <div class="col-sm-2">
+                                                <select name="categoria" class="btn btn-default form-control">
+                                                   <option value="externo">Externo</option>
+                                                   <option value="interno">Interno</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="fechaPrestamo" class="col-md-2 control-label">* Fecha préstamo:</label>
+                                            <div class="col-md-3">
+                                                <input name="año" type="date" autocomplete="off" class="form-control" placeholder="">
+                                            </div>
+
+                                            <label for="fechaDevolucion" class="col-md-4 control-label">* Fecha devolución:</label>
+                                            <div class="col-md-3">
+                                                <input name="fechaDevolucion" type="date" value="" autocomplete="off" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="tiempoPrestamo" class="col-md-2 control-label">* Tiempo préstamo :</label>
+                                            <div class="col-md-2">
+                                                <input name="tiempoPrestamo" type="number" autocomplete="off" class="form-control" placeholder="">
+                                            </div>
+
+                                            <div class="col-md-2 ">
+                                                <select name="categoria" class="btn btn-default form-control">
+                                                   <option value="1">Horas</option>
+                                                   <option value="2">Días</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-4">
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                                            <a class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i> Cerrar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap 3.3.6 -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="js/app.min.js"></script>
+    </div>
+
+</body>
+
+</html>

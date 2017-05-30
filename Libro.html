@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Biblioteca | Reg. Libro</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="css/skin-blue.min.css">
+    <link rel="stylesheet" href="DataTables/media/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.js"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.dataTables.js"></script>
+    <script>
+        $(function() {
+            $("#tablaLibros").DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+
+            <a href="inicio.html" class="logo">
+                <span class="logo-mini"><b>BI</b>BL</span>
+                <span class="logo-lg"><b>BIBLIOTECA </b> OFELIA</span>
+            </a>
+
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">USUARIO</span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        USUARIO - ADMIN
+                                        <small>OFELIA VELASQUEZ</small>
+                                    </p>
+                                </li>
+
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    </div>
+
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+
+                    <div class="pull-left image">
+                        <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+
+                    <div class="pull-left info">
+                        <p>Usuario - Admin</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+                    </div>
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li class="header">MENÚ - PRINCIPAL</li>
+                    <li>
+                        <a href="inicio.html">
+                            <i class="glyphicon glyphicon-home"></i> <span>Página Principal</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>Registro</span>
+                            <span class="pull-right-container">
+                                 <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Libro.html"><i class="fa fa-book"></i>Libro</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Docente.html"><i class="fa fa-suitcase"></i>Docente</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Alumno.html"><i class="fa fa-mortar-board"></i>Alumno</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="Prestamo.html">
+                            <i class="glyphicon glyphicon-book"></i>
+                            <span> Préstamo</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>Reporte</span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li><a href="leen_mas.html"><i class="fa fa-circle-o"></i>Leen más</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="alertaPrestamo.html"><i class="fa fa-circle-o"></i>Alerta de préstamo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    MÓDULO REGISTRO
+                    <small>Registrar Libro</small>
+                </h1>
+
+                <ol class="breadcrumb">
+                    <li><a href="inicio.html"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
+                    <li class="active">Registro</li>
+                    <li class="active">Registar Libro</li>
+                </ol>
+            </section>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addLibro">
+                        <i class="ion-person-add"></i> Registrar libro</button>
+                        <br><br>
+                    </div>
+                </div>
+
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box collapsed-box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Registro de libros</h3>
+                                    <div class="box-tools pull-right">
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="container-fluid">
+                                        <div class="col-lg-12">
+                                            <div class="table-responsive">
+                                                <table id="tablaLibros" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th>#</th>
+                                                            <th>Fecha</th>
+                                                            <th>Titulo</th>
+                                                            <th>Autor</th>
+                                                            <th><center>N° Serie</center></th>
+                                                            <th>Edición</th>
+                                                            <th>Año</th>
+                                                            <th>Editorial</th>
+                                                            <th>Proveedor</th>
+                                                            <th>Ejemplar</th>
+                                                            <th>Estado</th>
+                                                            <th>Precio</th>
+                                                            <th>Acción</th>
+                                                            <th>Descripción</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td><center>5</center></td>
+                                                            <td><span class="badge bg-green">Bueno</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="Libro.html"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-yellow">Regular</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-red">Malo</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-green">Bueno</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-yellow">Regular</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>6</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-red">Malo</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>7</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-green">Bueno</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>8</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-yellow">Regular</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>9</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-red">Malo</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>10</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-green">Bueno</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>11</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-yellow">Regular</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>16/05/2017</td>
+                                                            <td>Romeo y Julieta</td>
+                                                            <td>William Shakespeare</td>
+                                                            <td>12345678</td>
+                                                            <td></td>
+                                                            <td>1597</td>
+                                                            <td>Alianza editorial</td>
+                                                            <td>Estado Peruano</td>
+                                                            <td>
+                                                                <center>5</center>
+                                                            </td>
+                                                            <td><span class="badge bg-red">Malo</span></td>
+                                                            <td>s/35.00</td>
+                                                            <td>
+                                                                <center>
+                                                                    <a class="btn btn-info btn-xs" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> </a>
+                                                                    <a class="btn btn-danger btn-xs" href="#" role="button"><i class="fa fa-trash" aria-hidden="true"></i> </a>
+                                                                </center>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                    </tbody>
+
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>#</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Fecha</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Título</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Autor</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>N° Serie</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Edición</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Año</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Editorial</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Proveedor</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Ejemplar</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Estado</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Precio</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Acción</center>
+                                                            </th>
+                                                            <th rowspan="1" colspan="1">
+                                                                <center>Descripción</center>
+                                                            </th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+
+        <div class="modal fade" id="addLibro" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Agregar libro</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="alert alert-warning" role="alert" style="opacity: 1.5">
+                            <strong style="color: #ffffff;"><i class="icon fa fa-warning"></i>Advertencia: </strong>Asegurate de llenar todos los campos *
+                        </div>
+
+                        <form action="redirectcategoria" method="post" class="form-horizontal">
+                            <input type="hidden" name="op" value="add">
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <div class="form-group col-md-12">
+
+                                        <div class="form-group">
+                                            <label for="numeroIngreso" class="col-md-2 control-label">* N°ingreso:</label>
+                                            <div class="col-md-2">
+                                                <input name="numeroIngreso" type="number" autocomplete="off" class="form-control" placeholder="" title="N° ingreso">
+                                            </div>
+
+                                            <label for="fechaRegistro" class="col-md-5 control-label ">* Fecha:</label>
+                                            <div class="col-md-3 pull-right">
+                                                <input name="fechaRegistro" type="date" autocomplete="off" class="form-control" placeholder="Fecha de registro" title="Fecha de registro">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="tituloLibro" class="col-md-2 control-label">* Título:</label>
+                                            <div class="col-md-10">
+                                                <input name="tituloLibro" type="text" autocomplete="off" class="form-control" placeholder="Titulo del libro" title="Titulo del libro">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="categoriaLibro" class="col-md-2 control-label">* Categoría:</label>
+                                            <div class="col-md-3">
+                                                <select class="btn btn-default" name="categoriaLibro" id="">
+                                                    <option value="1">Generalidades</option>
+                                                    <option value="2">Filosofía y psicología</option>
+                                                    <option value="3">Religión</option>
+                                                    <option value="4">Ciencias Sociales</option>
+                                                    <option value="5">Lenguas</option>
+                                                    <option value="4">Ciencias Naturales y Matemáticas</option>
+                                                    <option value="4">Tecnología</option>
+                                                    <option value="4">Las Artes</option>
+                                                    <option value="4">Literatura y retórica</option>
+                                                    <option value="4">Geografía e historia</option>
+
+                                                </select>
+                                            </div>
+
+                                            <label for="subCategoriaLibro" class="col-md-3 control-label">* SubCategoría:</label>
+                                            <div class="col-md-4 text-right">
+                                                <select class=" btn btn-default" name="subCategoriaLibro" id="">
+                                                    <option value="1">Generalidades</option>
+                                                    <option value="2">Filosofía y psicología</option>
+                                                    <option value="3">Religión</option>
+                                                    <option value="4">Ciencias Sociales</option>
+                                                    <option value="5">Lenguas</option>
+                                                    <option value="4">Ciencias Naturales y Matemáticas</option>
+                                                    <option value="4">Tecnología</option>
+                                                    <option value="4">Las Artes</option>
+                                                    <option value="4">Literatura y retórica</option>
+                                                    <option value="4">Geografía e historia</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="nombreAutor" class="col-md-2 control-label">* Autor:</label>
+                                            <div class="col-md-5">
+                                                <input name="nombreAutor" type="text" autocomplete="off" class="form-control" placeholder="Autor" title="Autor">
+                                            </div>
+
+                                            <label for="numeroSerie" class="col-md-2 control-label">* N° Serie:</label>
+                                            <div class="col-md-3">
+                                                <input name="numeroSerie" type="number" autocomplete="off" class="form-control" placeholder="Serie" title="Serie">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="nombreEdicion" class="col-md-2 control-label">* Edicion:</label>
+                                            <div class="col-md-5">
+                                                <input name="nombreEdicion" type="text" autocomplete="off" class="form-control" placeholder="Edición" title="Edición">
+                                            </div>
+
+                                            <label for="nombreEditorial" class="col-md-2 control-label">* Editorial:</label>
+                                            <div class="col-md-3">
+                                                <input name="nombreEditorial" type="text" autocomplete="off" class="form-control" placeholder="Editorial" title="Editorial">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="nombreproveedor" class="col-md-2 control-label">* Proveedor:</label>
+                                            <div class="col-md-5">
+                                                <input name="nombreproveedor" type="text" autocomplete="off" class="form-control" placeholder="Proveedor" title="Proveedor">
+                                            </div>
+
+                                            <label for="cantidadEjemplar" class="col-md-2 control-label">* Ejemplar:</label>
+                                            <div class="col-md-3">
+                                                <input name="cantidadEjemplar" type="number" autocomplete="off" class="form-control" placeholder="Ejemplar" title="Ejemplares">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="estadoLibro" class="col-md-2 control-label">* Estado:</label>
+                                            <div class="col-md-5">
+                                                <select class=" btn btn-default" name="estadoLibro" id="">
+                                                   <option value="1">Estado</option>
+                                                   <option value="2">Bueno</option>
+                                                   <option value="3">Regular</option>
+                                                   <option value="4">Malo</option>
+                                               </select>
+                                            </div>
+
+                                            <label for="cantidadPaginas" class="col-md-2 control-label">* Páginas:</label>
+                                            <div class="col-md-3">
+                                                <input name="cantidadPaginas" type="number" autocomplete="off" class="form-control" placeholder="Páginas" title="Páginas">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="añoPublicacion" class="col-md-2 control-label">* Año:</label>
+                                            <div class="col-md-2">
+                                                <input name="añoPublicacion" type="number" autocomplete="off" class="form-control" placeholder="Año de pub.." title="Año de publicación">
+                                            </div>
+
+                                            <label for="precioLibro" class="col-md-5 control-label">* Precio:</label>
+                                            <div class="col-md-3 pull-right">
+                                                <input name="precioLibro" type="number" autocomplete="off" class="form-control" placeholder="Precio" title="Precio">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="descripcionLibro" class="col-sm-2 control-label">* Descripción</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="descripcionLibro" rows="5" cols="110" class="form-control" placeholder="Escribe aquí una breve descripción del libro..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Registrar</button>
+                                        <a class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i> Cerrar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>
+            <strong>Copyright &copy; 2014-2016 Almsaeed Studio</strong> All rights reserved.
+        </footer>
+
+        <!-- Bootstrap 3.3.6 -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="js/app.min.js"></script>
+    </div>
+
+
+</body>
+
+</html>

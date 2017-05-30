@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Biblioteca | Reportes</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="css/skin-blue.min.css">
+    <link rel="stylesheet" href="DataTables/media/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.js"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.dataTables.js"></script>
+    <script>
+        $(function() {
+            $("#tablaLeenMas").DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <a href="inicio.html" class="logo">
+                <span class="logo-mini"><b>BI</b>BL</span>
+                <span class="logo-lg"><b>BIBLIOTECA </b> OFELIA</span>
+            </a>
+
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">USUARIO</span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        USUARIO - ADMIN
+                                        <small>OFELIA VELASQUEZ</small>
+                                    </p>
+                                </li>
+
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+
+                    <div class="pull-left info">
+                        <p>Usuario - Admin</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+                    </div>
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li class="header">MENÚ - PRINCIPAL</li>
+                    <li>
+                        <a href="inicio.html">
+                            <i class="glyphicon glyphicon-home"></i> <span>Página Principal</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>Registros</span>
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Libro.html"><i class="fa fa-circle-o"></i>Libro</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Alumno.html"><i class="fa fa-circle-o"></i>Alumno</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="Docente.html"><i class="fa fa-circle-o"></i>Docente</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="Prestamo.html">
+                            <i class="glyphicon glyphicon-book"></i>
+                            <span> Préstamo</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>Reporte</span>
+                            <span class="pull-right-container">
+                               <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                            <li><a href="leen_mas.html"><i class="fa fa-circle-o"></i>Leen más</a></li>
+                        </ul>
+
+                        <ul class="treeview-menu">
+                            <li><a href="alertaPrestamo.html"><i class="fa fa-circle-o"></i>Alerta de préstamo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            <section class="content">
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Reporte de Alumnos que Leen más</h3>
+                                </div>
+
+                                <div class="box-body">
+                                    <table id="tablaLeenMas" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <center>#</center>
+                                                </th>
+                                                <th>
+                                                    <center>Persona</center>
+                                                </th>
+                                                <th>
+                                                    <center>Tipo persona</center>
+                                                </th>
+                                                <th>
+                                                    <center>Cantidad ejemplares</center>
+                                                </th>
+                                                <th>
+                                                    <center>Lugar </center>
+                                                </th>
+                                                <th>
+                                                    <center>Usuario</center>
+                                                </th>
+
+
+                                                <th>
+                                                    <center>Acción</center>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>
+                                                    <center>1</center>
+                                                </td>
+                                                <td>
+                                                    <center>Junior Gadea</center>
+                                                </td>
+                                                <td>
+                                                    <center>Docente</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Interno</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>2</center>
+                                                </td>
+                                                <td>
+                                                    <center>Elder Alex</center>
+                                                </td>
+                                                <td>
+                                                    <center>Alumno</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Externo</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>3</center>
+                                                </td>
+                                                <td>
+                                                    <center>Karoline</center>
+                                                </td>
+                                                <td>
+                                                    <center>Docente</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Interno</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>4</center>
+                                                </td>
+                                                <td>
+                                                    <center>Alberto</center>
+                                                </td>
+                                                <td>
+                                                    <center>Alumno</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Externo</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>5</center>
+                                                </td>
+                                                <td>
+                                                    <center>Pedro</center>
+                                                </td>
+                                                <td>
+                                                    <center>Docente</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Interno</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>6</center>
+                                                </td>
+                                                <td>
+                                                    <center>Felipe</center>
+                                                </td>
+                                                <td>
+                                                    <center>Docente</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Externo</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>7</center>
+                                                </td>
+                                                <td>
+                                                    <center>Jose</center>
+                                                </td>
+                                                <td>
+                                                    <center>Alumno</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Interno</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>8</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo</center>
+                                                </td>
+                                                <td>
+                                                    <center>Docente</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Externo</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>9</center>
+                                                </td>
+                                                <td>
+                                                    <center>Isai</center>
+                                                </td>
+                                                <td>
+                                                    <center>Alumno</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Externo</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Camilo</center>
+                                                </td>
+                                                <td>
+                                                    <center>Alumno</center>
+                                                </td>
+                                                <td>
+                                                    <center>10</center>
+                                                </td>
+                                                <td>
+                                                    <center>Interno</center>
+                                                </td>
+                                                <td>
+                                                    <center>Aldo Soraluz</center>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <input type="button" value="ver libros" class="btn btn-primary">
+                                                        <input type="button" value="ver perfil" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th rowspan="1" colspan="1"><center>#</center></th>
+                                                <th rowspan="1" colspan="1"><center>Persona</center></th>
+                                                <th rowspan="1" colspan="1"><center>Tipo persona</center></th>
+                                                <th rowspan="1" colspan="1"><center>Cantidad ejemplares</center></th>
+                                                <th rowspan="1" colspan="1"><center>Lugar</center></th>
+                                                <th rowspan="1" colspan="1"><center>Usuario</center></th>
+                                                <th rowspan="1" colspan="1"><center>Acción</center></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#example2').DataTable();
+                                        });
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>
+            <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        </footer>
+
+        <!-- Bootstrap 3.3.6 -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="js/app.min.js"></script>
+    </div>
+    <!-- ./wrapper -->
+
+
+</body>
+
+</html>

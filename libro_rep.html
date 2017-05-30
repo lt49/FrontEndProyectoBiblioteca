@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Biblioteca | Reg. Alumno</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="css/skin-blue.min.css">
+    <link rel="stylesheet" href="DataTables/media/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.js"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.dataTables.js"></script>
+    <script>
+        $(function() {
+            $("#tablaAlumnos").DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+            $("#tablaDocentes").DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+            $("#tablaBibliotecarios").DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+
+        });
+
+    </script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="inicio.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>BI</b>BL</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>BIBLIOTECA </b> OFELIA</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">USUARIO</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        USUARIO - ADMIN
+                                        <small>OFELIA VELASQUEZ</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Usuario - Admin</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+                    </div>
+                </div>
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">MENÚ - PRINCIPAL</li>
+                    <li>
+                        <a href="inicio.html">
+                            <i class="glyphicon glyphicon-home"></i> <span>Página Principal</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <span>Registro</span>
+                            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="Libro.html"><i class="fa fa-circle-o"></i>Libro</a></li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li><a href="Alumno.html"><i class="fa fa-circle-o"></i>Alumno</a></li>
+                        </ul>
+                        <ul class="treeview-menu">
+                            <li><a href="Docente.html"><i class="fa fa-circle-o"></i>Docente</a></li>
+                        </ul>
+                    </li>
+                     <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-edit"></i>
+            <span>Reportes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="Libro_rep.html"><i class="fa fa-circle-o"></i>Libro</a></li>
+          </ul>
+
+        </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+         <!--   <section class="content-header">
+                <h1>
+                    MODÚLO PERSONA
+                    <small>Registrar a personas</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="inicio.html"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
+                    <li class="active">Registar Libros</li>
+                </ol>
+            </section>-->
+
+            <!-- Main content -->
+            <section class="content">
+               <!-- <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addAlumno"><i class="ion-person-add"></i> Registrar Libro</button>
+
+                        <br><br>
+                    </div>
+                </div>-->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">REPORTES DE LIBROS</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th><center>#</center></th>
+                   <th><center>Alumno</center></th>
+                  <th><center>Fecha Pres</center></th>
+                  <th><center>editorial</center></th>
+                  <th><center>Usuario</center></th>
+                  <th><center>cantidad</center></th>
+                  <th><center>Fecha Devolucion</center></th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <!--<tr>
+                 <td>1</td>
+                 <td>romeo y julieta</td>
+                         <td><select>
+                             <option value="1">Nombre</option>
+                             <option value="2">Lugar de Procedencia
+
+                             </option>
+
+                         </select>
+                             <select>
+                                     <option value="1">Nombre</option>
+                                     <option value="2">Ubigeo</option>
+                                 </select></td>
+                                   <td>Navarrete</td>
+                 <td>2015</td>
+                 <td>213</td>
+                 <td>5</td>
+                 <td>s/ 35.00</td>
+                </tr>-->
+                <tr>
+                <td>1</td>
+                 <td>Junior Gadea</td>
+                 <td>17/02/2017</td>
+                   <td>Navarrete</td>
+                 <td>Aldo Soraluz</td>
+                 <td>3</td>
+                 <td>01/03/2017</td>
+
+                </tr>
+                 <tr>
+                <td>2</td>
+                 <td>Alberto Cruz</td>
+                 <td>04/03/2017</td>
+                   <td>Navarrete</td>
+                 <td>Karoline</td>
+                 <td>2</td>
+                 <td>13/03/2017</td>
+
+                </tr>
+                 <tr>
+                <td>3</td>
+                 <td>Junior Gadea</td>
+                 <td>04/02/2017</td>
+                   <td>Navarrete</td>
+                 <td>Alex Maluquish</td>
+                 <td>1</td>
+                 <td>04/13/2017</td>
+
+                </tr>
+
+
+
+                </tbody>
+             </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>
+            <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        </footer>
+        <!--MODAL DE AGREGAR ALUMNO-->
+        <div class="modal fade" id="addAlumno" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+
+                    <!--CABECERA DEL MODAL AGREGAR ALUMNO-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">AGREGAR LIBRO</h4>
+                    </div>
+                    <!--FIN de la CABECERA DEL MODAL AGREGAR ALUMNO-->
+
+                    <!--CUERPO DEL MODAL AGREGAR ALUMNO-->
+                    <div class="modal-body">
+
+                        <!--ALERTA DEL MODAL AGREGAR ALUMNO-->
+                        <div class="alert alert-warning" role="alert" style="opacity: 0.5">
+                            <button class="close" data-dismiss="alert"><span>&times;</span></button>
+                            <strong style="color: #6f2600;"><i class="icon fa fa-warning"></i>Asegurate!</strong> de llenar todos los campos
+                        </div>
+                        <!--FIN de ALERTA DEL MODAL AGREGAR ALUMNO-->
+
+                        <!--FORMULARIO DEL MODAL AGREGAR ALUMNO-->
+                        <form action="redirectcategoria" method="post" class="form-horizontal">
+
+
+                            <input type="hidden" name="op" value="add">
+                            <!--GRUPO 1-->
+                            <div class="form-group">
+
+                                <label for="nombreLibro" class="col-sm-2 control-label">TITULO:</label>
+                                <div class="col-sm-4">
+                                    <input name="nombreAlumno" type="text" autocomplete="off" class="form-control" placeholder="Titulo del Libro...">
+                                </div>
+                                <label for="apellidoAlumno" class="col-sm-2 control-label">Año de Publicación: </label>
+                                <select>
+                                    <li>
+                                        <option value="proce">procedencia</option>
+                                        <ul>
+                                            <li><option value="nombre">nombre</option></li>
+                                            <li><option value="ubigeo">ubigeo</option></li>
+                                        </ul>
+
+                                        <option value="nomb">nombre</option>
+                                    </li>
+                                </select>
+                                <div class="col-sm-4">
+                                    <input name="apellidoAlumno" type="date" autocomplete="off" class="form-control" placeholder="Año de Publicación...">
+                                </div>
+                                </div>
+                            <!--FIN del GRUPO 1-->
+
+                            <!--GRUPO 2-->
+                            <div class="form-group">
+
+                                <label for="nombreAlumno" class="col-sm-2 control-label">Cant. Páginas:</label>
+                                <div class="col-sm-4">
+                                    <input name="nombreAlumno" type="text" autocomplete="off" class="form-control" placeholder="Cant. Páginas...">
+                                </div>
+                                <label for="nombreAlumno" class="col-sm-2 control-label">Cantidad: </label>
+                                <div class="col-sm-4">
+                                    <input name="nombreAlumno" type="text" autocomplete="off" class="form-control" placeholder="Cantidad de Libros...">
+                                </div>
+                            </div>
+                            <!--FIN del GRUPO 2-->
+
+                            <!--FOOTER O PIE DE PAGINA DEL MODAL AGREGAR ALUMNO-->
+                            <div class="modal-footer">
+
+                                <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+                                <a class="btn btn-info">Limpiar</a>
+                                <a class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+
+                            </div>
+                            <!--FIN del FOOTER O PIE DE PAGINA DEL MODAL AGREGAR ALUMNO-->
+                        </form>
+                        <!--FIN del FORMULARIO DEL MODAL AGREGAR ALUMNO-->
+
+                    </div>
+                    <!--FIN del CUERPO DEL MODAL AGREGAR ALUMNO-->
+
+                </div>
+            </div>
+        </div>
+        <!--FIN del MODAL DE AGREGAR ALUMNO-->
+
+        <!-- Bootstrap 3.3.6 -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="js/app.min.js"></script>
+    </div>
+    <!-- ./wrapper -->
+
+
+</body>
+
+</html>
