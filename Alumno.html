@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
     <meta charset="utf-8">
@@ -19,6 +19,9 @@
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="css/skin-blue.min.css">
     <link rel="stylesheet" href="DataTables/media/css/jquery.dataTables.min.css">
+    
+    <script src="js/angular.min.js"></script>
+    <script src="js/App.js"></script>
     <!-- jQuery -->
     <script type="text/javascript" language="javascript" src="DataTables/media/js/jquery.js"></script>
     <!-- Datatable -->
@@ -61,7 +64,7 @@
     </script>
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-controller="ValidarFrm">
     <div class="wrapper">
 
         <header class="main-header">
@@ -297,7 +300,7 @@
             <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
         </footer>
 
-
+<!--  ::::::::::::::::::::::::::::  Modal Agregar :::::::::::::::: -->
         <div class="modal fade" id="addAlumno" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -312,33 +315,38 @@
                             <strong style="color: #ffffff;"><i class="icon fa fa-warning"></i>Advertencia: </strong>Asegúrate de llenar todos los campos *
                         </div>
 
-                        <form action="redirectcategoria" method="post" class="form-horizontal">
+                        <form id="frmAlumno" class="form-horizontal" method="post" action="inicio.html">
                             <input type="hidden" name="op" value="add">
 
                             <div class="form-group">
                                 <label for="nombreAlumno" class="col-sm-2 control-label">* Nombre:</label>
                                 <div class="col-sm-4">
-                                    <input name="nombreAlumno" type="text" autocomplete="off" class="form-control" placeholder="Nombre del alumno" title="Nombre del alumno">
+                                    <input name="nombreAlumno" type="text" autocomplete="off" class="form-control" placeholder="Nombre del alumno" title="Nombre del alumno" ng-init="name = ''" ng-model="name" ng-change="verificar()">
+                                    <div ng-show = "campo" style="color:red;">*Debe llenar este campo</div>
                                 </div>
 
                                 <label for="apellidoAlumno" class="col-sm-2 control-label">* Apellido: </label>
                                 <div class="col-sm-4">
-                                    <input name="apellidoAlumno" type="text" autocomplete="off" class="form-control" placeholder="Apellido de alumno" title="Apellido del alumno">
+                                    <input name="apellidoAlumno" type="text" autocomplete="off" class="form-control" placeholder="Apellido de alumno" title="Apellido del alumno" ng-init="lastname = ''" ng-model="lastname" ng-change="verificar()">
+                                    <div ng-show = "campoApp" style="color:red;">*Debe llenar este campo</div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="generoAlumno" class="col-sm-2 control-label">* Género: </label>
                                 <div class="col-sm-4">
-                                    <select name="generoAlumno" class="form-control" title="Género del Alumno">
+                                    <select name="generoAlumno" class="form-control" title="Género del Alumno" ng-init="genero = '0'" ng-model="genero" ng-change="verificar()">
+                                       <option value="0">--- Seleccionar --</option>
                                        <option value="1">Masculino</option>
                                        <option value="2">Femenino</option>
                                     </select>
+                                    <div ng-show = "campoGenero" style="color:red;">*Debe llenar este campo</div>
                                 </div>
 
                                 <label for="fechaNacimiento" class="col-sm-2 control-label">* Fecha de nacimiento: </label>
                                 <div class="col-sm-4">
-                                    <input name="fechaNacimiento" type="date" autocomplete="off" class="form-control" placeholder="" title="Fecha de nacimiento">
+                                    <input name="fechaNacimiento" type="date" autocomplete="off" class="form-control" placeholder="" title="Fecha de nacimiento" ng-init="fecha = ''" ng-model="fecha" ng-change="verificar()">
+                                    <div ng-show = "campoFecha" style="color:red;">*Debe llenar este campo</div>
                                 </div>
                             </div>
 
@@ -397,7 +405,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Registrar</button>
+                                <button type="button" class="btn btn-success" ng-click="validarCampo()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Registrar</button>
                                 <a class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i> Cerrar</a>
                             </div>
                         </form>
